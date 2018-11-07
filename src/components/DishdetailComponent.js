@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import Comment from './CommentForm';
  
     function RenderComments ({comments}) {
          return (
@@ -13,6 +14,7 @@ import { Link } from 'react-router-dom';
                             -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                         </li>  
                 )}
+                <Comment />
             </div>
         )
     }
