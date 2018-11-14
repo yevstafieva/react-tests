@@ -1,20 +1,24 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Comment from './CommentForm';
+import CommentForm from './CommentForm';
  
-    function RenderComments ({comments}) {
+    function RenderComments ({comments, addComment, dishId}) {
          return (
-            <div className="col-12 col-md-5">
-                <h4>Comments</h4>  
-                {comments.map( (comment) =>
-                        
-                        <li key={comment.id}>
-                            {comment.comment}<br />
-                            -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
-                        </li>  
-                )}
-                <Comment />
+            <div className="col-12 col-md-5 m-1">
+                <h4>Comments</h4> 
+                <ul className="list-unstyled"> 
+                    {comments.map( (comment) => {
+                        return (    
+                            <li key={comment.id}>
+                                <p>{comment.comment}</p>
+                                <p>-- {comment.author}, </p>    {/* {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))} */}
+                                {console.log("Comment:", comment)}
+                            </li>  
+                    )})
+                    }
+                </ul>
+                <CommentForm dishId={dishId} addComment={addComment}/>
             </div>
         )
     }
@@ -49,7 +53,7 @@ import Comment from './CommentForm';
                     </div>
                     <div className='row'>
                         <RenderDish dish={props.dish}/>
-                        <RenderComments comments={props.comments}/>
+                        <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
                     </div>
                 </div>
             );}

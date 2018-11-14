@@ -6,12 +6,12 @@ const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
 
-class Comment extends Component {
+class CommentForm extends Component {
     constructor (props) {
         super (props);
         this.state=({isModalOpen: false});
    
-        this.toggleModal=this.toggleModal.bind(this);
+        this.toggleModal=this.toggleModal.bind(this); 
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
@@ -24,7 +24,7 @@ class Comment extends Component {
 
     handleSubmit (values) {
         this.toggleModal();
-        alert (JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment); 
     }
 
     render() {
@@ -94,4 +94,4 @@ class Comment extends Component {
     }
 }
 
-export default Comment;
+export default CommentForm;
