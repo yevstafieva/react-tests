@@ -25,6 +25,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-redux": "^5.0.7"
+    "react-redux": "^5.0.7",
+    "react-transition-group": "^2.3.0"
   }
 }
