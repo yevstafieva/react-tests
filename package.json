@@ -7,6 +7,7 @@
     "bootstrap-social": "^5.1.1",
     "cross-fetch": "^2.1.0",
     "font-awesome": "^4.7.0",
+    "prop-types": "^15.6.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-popper": "^0.9.2",
@@ -25,6 +26,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "react-animation-components": "^3.0.0",
     "react-redux": "^5.0.7",
     "react-transition-group": "^2.3.0"
   }
